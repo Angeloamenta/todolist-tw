@@ -19,27 +19,37 @@ export class InputComponent {
 
 
   addNote() {
-   let obj:any = {name: this.name, text:this.text, check: false}
+   let obj:any = {name: this.name, text:this.text, checked: false}
    if (obj.name == false || obj.text == false) {
     this.error= true
     
    }else {
-    console.log("else");  
-    for (let index = 0; index < this.notes.notes.length; index++) {
-      const element = this.notes.notes[index];
-      console.log("elemento");
-      
-      if (element.text === obj.text ) {
-        this.exist = true;
-      }else {
-        this.notes.notes.push(obj)
-        this.error= false
-        console.log(this.error);
-        this.exist = false
+    if (this.notes.notes.length <= 0) {
+      this.notes.notes.push(obj)
+      console.log(this.error);
+    } else {
+      for (let index = 0; index < this.notes.notes.length; index++) {      
+        const element = this.notes.notes[index];
+        
+        if (element.text === obj.text ) {
+          this.exist = true;
+  
+        }else{
+          console.log("oggetto", obj);
+          
+          this.exist = false;
+          this.error= false;
+          console.log(this.exist);
+          
+          this.notes.notes.push(obj)
+          this.exist = false;
 
+  
+        }
+        
       }
-      
     }
+    
 
    }
 
