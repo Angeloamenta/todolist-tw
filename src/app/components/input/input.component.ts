@@ -36,6 +36,8 @@ addNote() {
     }
   }
 
+  this.name = ""
+  this.text = ""
 }
   
 
