@@ -1,5 +1,5 @@
 <div>
     <button [disabled]="notebase.length <= 0" (click)="selectAll()">seleziona tutto</button>
     <button [disabled]="!isDisabled()" (click)="deselectAll()">deseleziona tutto</button>
-    <button (click)="deleteSelected()">elimina selezionati</button>
+    <button [disabled]="!isDisabled()" (click)="deleteSelected()">elimina selezionati</button>
 </div>

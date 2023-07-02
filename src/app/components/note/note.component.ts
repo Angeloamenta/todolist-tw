@@ -29,40 +29,25 @@ export class NoteComponent {
   
   
  }
-
-  checkId(index:any) {
-    console.log(index)
-  }
   
-  //
-  //selectAll() {
-  //   for (let index = 0; index < this.notes.notes.length; index++) {
-  //     const element = this.notes.notes[index];
-  //     console.log(element);
-  //     element.checked = true
-      
-      
-  //   }
-  // }
 
     delete(index:any) {
       console.log(index);
-      for (let index = 0; index < this.notes.notes.length; index++) {
-        const element = this.notes.notes[index];
-        this.notes.notes.splice(index, 1)      
+     this.notes.notes.splice(index, 1)
+      // for (let index = 0; index < this.notes.notes.length; index++) {
+      //   const element = this.notes.notes[index];
+      //   this.notes.notes.splice(index, 1)      
         
-      } 
+      // } 
     }
 
     editNote (index:any) {
       console.log(index);
-
       let editNotes = this.notes.notes[index]
       return editNotes.edit = !editNotes.edit
     }
 
     editSingleNote(index:any) {
-
       console.log(this.notes.notes[index]);
       let element = this.notes.notes[index];
 
@@ -73,10 +58,5 @@ export class NoteComponent {
       console.log(this.notes.notes[index]);
 
     } 
-
-    // ngOnChanges(changes: SimpleChanges) {
-    //   console.log("cambio",changes);
-      
-    // }
 
 }
