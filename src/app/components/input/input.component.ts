@@ -24,8 +24,7 @@ export class InputComponent {
     this.error= true
     
    }else {
-    console.log("else");
-    
+    console.log("else");  
     for (let index = 0; index < this.notes.notes.length; index++) {
       const element = this.notes.notes[index];
       console.log("elemento");
