@@ -1,0 +1,11 @@
+<div>
+    <input [(ngModel)]="name" type="text">
+    <textarea [(ngModel)]="text" name="" id="" cols="30" rows="10"></textarea>
+    <input (click)="addNote()" type="button" value="Aggiungi Nota">
+</div>
+<div *ngIf="error">
+    Riempi i campi richiesti
+</div>
+<div *ngIf="exist">
+    la nota esiste
+</div>

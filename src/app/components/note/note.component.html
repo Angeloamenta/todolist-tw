@@ -1,0 +1,20 @@
+<div style="background-color: antiquewhite;" *ngFor="let note of notebase; let indexOfelement=index;">
+    <input (change)="checkNote(indexOfelement)" [checked]="note.checked" type="checkbox" name="" id="">
+    <h3>{{note.name}}</h3>
+    <p>{{note.text}}</p>
+    <div>
+        <button (click)="checkId(indexOfelement)">checkid</button>
+        <button (click)="editNote(indexOfelement)">edit</button>
+        <button (click)="delete(indexOfelement)">cancella</button>
+        <!-- <button (click)="selectAll()">tutto</button> -->
+    </div>
+    <div *ngIf="note.edit">
+        <div>
+            <input type="text" value="{{note.name}}">
+        </div>
+        <div>
+            <textarea name="" id="" cols="30" rows="10" value="{{note.note}}"></textarea>
+        </div>
+        <button (click)="editSingleNote(indexOfelement)">modifica nota</button>
+    </div>
+</div>
