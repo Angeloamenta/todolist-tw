@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { NotesService } from '../../service/notes.service';
+
 
 @Component({
   selector: 'app-note',
@@ -10,6 +11,9 @@ export class NoteComponent {
 
   constructor(private notes: NotesService) {}
   notebase:any;
+
+  name:string = ""
+  text:string = ""
 
 
   ngOnInit() {
@@ -57,16 +61,22 @@ export class NoteComponent {
       return editNotes.edit = !editNotes.edit
     }
 
-    editSingleNote(pippo:any) {
+    editSingleNote(index:any) {
 
-      console.log(this.notes.notes[pippo]);
-      let element = this.notes.notes[pippo];
+      console.log(this.notes.notes[index]);
+      let element = this.notes.notes[index];
 
-      element.name = "pino"
-      element.text = "lorem ipsum"
+      element.name = this.name
+      element.text = this.text
 
-      console.log(this.notes.notes[pippo]);
+      this.notes.notes[index].edit = false
+      console.log(this.notes.notes[index]);
 
     } 
+
+    // ngOnChanges(changes: SimpleChanges) {
+    //   console.log("cambio",changes);
+      
+    // }
 
 }
