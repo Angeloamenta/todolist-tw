@@ -40,6 +40,7 @@ export class GlobalbuttonsComponent {
   }
 
   deleteSelected() {
+    // usato for inverso perchè eliminando gli elementi gli index cambiavano e creava problemi
     for (let index = this.notes.notes.length - 1; index >= 0; index--) {
       let element = this.notes.notes[index];
       if (element.checked) {
