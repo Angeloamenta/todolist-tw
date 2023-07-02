@@ -40,19 +40,12 @@ export class GlobalbuttonsComponent {
   }
 
   deleteSelected() {
-      for (let index = 0; index < this.notes.notes.length; index++) {
-        let element = this.notes.notes[index];
-        if (element.checked == true) {
-          this.notes.notes.splice(index, 1);
-             
-        }
-      } 
-
-  //    this.notes.notes.forEach((element,index)=>{
-  //     if(element.checked== true) this.notes.notes.splice(index,1);
-  //  });
-  console.log(this.notes.notes);
- 
+    for (let index = this.notes.notes.length - 1; index >= 0; index--) {
+      let element = this.notes.notes[index];
+      if (element.checked) {
+        this.notes.notes.splice(index, 1);
+      }
+    }
   }
 
    isDisabled() {
