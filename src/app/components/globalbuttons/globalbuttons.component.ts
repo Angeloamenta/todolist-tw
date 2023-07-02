@@ -55,19 +55,17 @@ export class GlobalbuttonsComponent {
  
   }
 
-   isDisabled():any {
-    for (let index = 0; index < this.notes.notes.length; index++) {
-      const element = this.notes.notes[index];
-      if (element.checked === true) {
-        console.log(element ,"checcato");
-        
-        return true
+   isDisabled() {
+    let even = (element:any) => element.checked == true;
+    console.log("sss",this.notes.notes.some(even));
+    if(this.notes.notes.some(even) == true){
 
-      } else {
-        return false
-        
-      }
+      return true
+    } else {
+      return false
     }
+    
+    
   }
 
 }
