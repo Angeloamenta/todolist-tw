@@ -13,6 +13,7 @@ import { GlobalbuttonsComponent } from './components/globalbuttons/globalbuttons
 import { NoteComponent } from './components/note/note.component';
 
 import { FormsModule } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    FormGroup
 
   ],
   providers: [],
