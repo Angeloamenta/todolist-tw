@@ -12,8 +12,8 @@ export class NoteComponent {
   constructor(private notes: NotesService) {}
   notebase:any;
 
-  name:string = ""
-  text:string = ""
+  // name:string = ""
+  // text:string = ""
 
 
   ngOnInit() {
@@ -50,14 +50,18 @@ export class NoteComponent {
     editSingleNote(index:any) {
       console.log(this.notes.notes[index]);
       let element = this.notes.notes[index];
+      console.log(element.text);
+      
     
-      if (element.name == "" || element.text == "") {
+      if (element.name === "" || element.text === "") {
         console.log("no");
         
       }else {
-      element.name = this.name
-      element.text = this.text
+        // element.name = this.name
+        // element.text = this.text
       this.notes.notes[index].edit = false
+      console.log(this.notes.notes[index].name);
+      console.log(this.notes.notes[index].name);
       console.log(this.notes.notes[index]);
       }
 

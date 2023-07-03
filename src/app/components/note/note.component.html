@@ -9,10 +9,10 @@
     </div>
     <div *ngIf="note.edit">
         <div>
-            <input [(ngModel)]="name" type="text" value="{{note.name}}">
+            <input [(ngModel)]="note.name" type="text" value="{{note.name}}">
         </div>
         <div>
-            <textarea [(ngModel)]="text" name="" id="" cols="30" rows="10" value="{{note.text}}"></textarea>
+            <textarea [(ngModel)]="note.text" name="" id="" cols="30" rows="10" value="{{note.text}}"></textarea>
         </div>
         <button (click)="editSingleNote(indexOfelement)">modifica nota</button>
     </div>

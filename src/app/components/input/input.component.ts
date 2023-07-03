@@ -21,6 +21,8 @@ addNote() {
   let obj:any = {name: this.name, text:this.text, checked: false}
   if (obj.name == false || obj.text == false) {
     this.error= true
+    this.exist= false
+
   } else {
     if (this.notes.notes.length <=0) {
       this.notes.notes.push(obj)
@@ -28,8 +30,12 @@ addNote() {
       let existingItem = this.notes.notes.find(item => item.text === obj.text);
       if (existingItem) {
       this.exist = true
+      this.error= false
+      
     } else if (!existingItem) {
       this.exist = false
+      this.error= false
+
       this.notes.notes.push(obj)
 
     }
