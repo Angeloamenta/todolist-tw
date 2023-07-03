@@ -12,8 +12,9 @@ export class NoteComponent {
   constructor(private notes: NotesService) {}
   notebase:any;
 
-  // name:string = ""
-  // text:string = ""
+   name:string = ""
+   text:string = ""
+  empty = false
 
 
   ngOnInit() {
@@ -44,6 +45,10 @@ export class NoteComponent {
     editNote (index:any) {
       console.log(index);
       let editNotes = this.notes.notes[index]
+      this.name = editNotes.name
+      this.text = editNotes.text
+      console.log("editnote", this.name, this.text);
+      
       return editNotes.edit = !editNotes.edit
     }
 
@@ -55,7 +60,9 @@ export class NoteComponent {
     
       if (element.name === "" || element.text === "") {
         console.log("no");
-        
+        this.empty = true
+        this.notes.notes[index].name = this.name
+        this.notes.notes[index].text = this.text
       }else {
         // element.name = this.name
         // element.text = this.text
@@ -63,6 +70,7 @@ export class NoteComponent {
       console.log(this.notes.notes[index].name);
       console.log(this.notes.notes[index].name);
       console.log(this.notes.notes[index]);
+      this.empty = false
       }
 
     } 

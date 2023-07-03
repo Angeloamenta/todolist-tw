@@ -16,4 +16,7 @@
         </div>
         <button (click)="editSingleNote(indexOfelement)">modifica nota</button>
     </div>
+    <div *ngIf="empty">
+        nota non valida
+    </div>
 </div>
