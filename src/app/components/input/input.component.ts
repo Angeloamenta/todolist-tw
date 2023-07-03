@@ -18,7 +18,7 @@ export class InputComponent {
   exist:boolean = false;
 
 addNote() {
-  let obj:any = {name: this.name, text:this.text, checked: false}
+  let obj:any = {name: this.name, text:this.text, checked: false, empty:false ,exist:false}
   if (obj.name == false || obj.text == false) {
     this.error= true
     this.exist= false

@@ -15,7 +15,7 @@ export class NotesService {
   //   {name: "Ang", note: "bla ", checked: false, edit:false}
   // ]
 
-  notes:{name:string, text:string, checked:boolean, edit:boolean}[] = []
+  notes:{name:string, text:string, checked:boolean, edit:boolean, empty:boolean ,exist:boolean}[] = []
 
 ngOnInit() {
   console.log(this.notes);

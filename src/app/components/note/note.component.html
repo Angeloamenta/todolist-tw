@@ -15,8 +15,13 @@
             <textarea [(ngModel)]="note.text" name="" id="" cols="30" rows="10" value="{{note.text}}"></textarea>
         </div>
         <button (click)="editSingleNote(indexOfelement)">modifica nota</button>
+        <button (click)="noteOk(indexOfelement)">Ok</button>
+
     </div>
-    <div *ngIf="empty">
+    <div *ngIf="note.empty">
         nota non valida
+    </div>
+    <div *ngIf="note.exist">
+        nota esistente
     </div>
 </div>

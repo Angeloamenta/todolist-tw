@@ -14,7 +14,7 @@ export class NoteComponent {
 
    name:string = ""
    text:string = ""
-  empty = false
+
 
 
   ngOnInit() {
@@ -52,6 +52,10 @@ export class NoteComponent {
       return editNotes.edit = !editNotes.edit
     }
 
+    noteOk(index:any) {
+      this.notes.notes[index].edit = false
+    }
+
     editSingleNote(index:any) {
       console.log(this.notes.notes[index]);
       let element = this.notes.notes[index];
@@ -60,17 +64,28 @@ export class NoteComponent {
     
       if (element.name === "" || element.text === "") {
         console.log("no");
-        this.empty = true
+        element.empty = true
+        element.empty = false
         this.notes.notes[index].name = this.name
         this.notes.notes[index].text = this.text
       }else {
-        // element.name = this.name
-        // element.text = this.text
+        let existingItem = this.notes.notes.find(item => item.text === item.text);
+      if (existingItem) {
+        this.notes.notes[index].name = this.name
+        this.notes.notes[index].text = this.text
+        element.exist = true
+        element.empty= false
+        
+    } else if (!existingItem) {
       this.notes.notes[index].edit = false
       console.log(this.notes.notes[index].name);
       console.log(this.notes.notes[index].name);
       console.log(this.notes.notes[index]);
-      this.empty = false
+      element.empty = false
+      element.exist = false
+
+    }
+      
       }
 
     } 
