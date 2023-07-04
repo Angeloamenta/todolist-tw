@@ -1,5 +1,6 @@
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NotesService } from '../../service/notes.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -15,13 +16,23 @@ export class NoteComponent {
    name:string = ""
    text:string = ""
 
+   editForm:any = FormGroup
+
 
 
   ngOnInit() {
     this.notebase = this.notes.notes
-   // let obj = {name:"nome", note:"nota", checked:true};
-   
- }
+
+    this.editForm = new FormGroup({
+      name: new FormControl(),
+      text: new FormControl()
+    }) 
+  }
+
+  editFormNote() {
+    console.log(this.editForm.value);
+    
+  }
 
  checkNote(index:any) {
   // console.log(index);

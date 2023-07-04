@@ -9,14 +9,18 @@
     </div>
     <div *ngIf="note.edit">
         <div>
-            <input [(ngModel)]="note.name" type="text" value="{{note.name}}">
+            <input type="text" value="{{note.name}}">
         </div>
         <div>
-            <textarea [(ngModel)]="note.text" name="" id="" cols="30" rows="10" value="{{note.text}}"></textarea>
+            <textarea name="" id="" cols="30" rows="10" value="{{note.text}}"></textarea>
         </div>
         <button (click)="editSingleNote(indexOfelement)">modifica nota</button>
         <!-- <button (click)="noteOk(indexOfelement)">Ok</button> -->
-
+        <form [formGroup]="editForm" (ngSubmit)="editFormNote()">
+            <input type="text" name="name" formControlName="name">
+            <textarea name="" id="" cols="30" rows="10" formControlName="text"></textarea>
+            <input type="submit" value="invio">
+        </form>
     </div>
     <div *ngIf="note.empty">
         nota non valida
