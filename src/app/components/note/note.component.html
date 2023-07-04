@@ -8,15 +8,14 @@
         <!-- <button (click)="selectAll()">tutto</button> -->
     </div>
     <div *ngIf="note.edit">
-        <div>
+        <!-- <div>
             <input type="text" value="{{note.name}}">
         </div>
         <div>
             <textarea name="" id="" cols="30" rows="10" value="{{note.text}}"></textarea>
         </div>
-        <button (click)="editSingleNote(indexOfelement)">modifica nota</button>
-        <!-- <button (click)="noteOk(indexOfelement)">Ok</button> -->
-        <form [formGroup]="editForm" (ngSubmit)="editFormNote()">
+        <button (click)="editSingleNote(indexOfelement)">modifica nota</button> -->
+        <form [formGroup]="editForm" (ngSubmit)="editFormNote(indexOfelement)">
             <input type="text" name="name" formControlName="name">
             <textarea name="" id="" cols="30" rows="10" formControlName="text"></textarea>
             <input type="submit" value="invio">

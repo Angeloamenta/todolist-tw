@@ -29,8 +29,8 @@ export class NoteComponent {
     }) 
   }
 
-  editFormNote() {
-    console.log(this.editForm.value);
+  editFormNote(index:any) {
+    console.log(this.editForm.value, index);
     
   }
 
