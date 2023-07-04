@@ -52,9 +52,9 @@ export class NoteComponent {
       return editNotes.edit = !editNotes.edit
     }
 
-    noteOk(index:any) {
-      this.notes.notes[index].edit = false
-    }
+    // noteOk(index:any) {
+    //   this.notes.notes[index].edit = false
+    // }
 
     editSingleNote(index:any) {
       console.log(this.notes.notes[index]);
@@ -69,7 +69,10 @@ export class NoteComponent {
         this.notes.notes[index].name = this.name
         this.notes.notes[index].text = this.text
       }else {
-        let existingItem = this.notes.notes.find(item => item.text === item.text);
+        let text = this.notes.notes[index].text
+        console.log(text);
+        
+        let existingItem = this.notes.notes.find(item => item.text === text);
       if (existingItem) {
         this.notes.notes[index].name = this.name
         this.notes.notes[index].text = this.text
