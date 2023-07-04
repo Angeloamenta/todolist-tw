@@ -31,6 +31,34 @@ export class NoteComponent {
 
   editFormNote(index:any) {
     console.log(this.editForm.value, index);
+    let element = this.notes.notes[index];
+    if (element.name === "" || element.text === "") {
+      console.log("no");
+      element.empty = true
+      element.exist = false
+      this.notes.notes[index].name = this.name
+      this.notes.notes[index].text = this.text
+    }else {
+      let existingItem = this.notes.notes.find(item => item.text === this.editForm.value.text);
+    if (existingItem) {
+      this.notes.notes[index].name = this.name
+      this.notes.notes[index].text = this.text
+      element.exist = true
+      element.empty= false
+      
+  } else if (!existingItem) {
+    this.notes.notes[index].edit = false
+    this.notes.notes[index].name = this.editForm.value.name
+    this.notes.notes[index].text = this.editForm.value.text
+    console.log(this.notes.notes[index].name);
+    console.log(this.notes.notes[index].name);
+    console.log(this.notes.notes[index]);
+    element.empty = false
+    element.exist = false
+
+  }
+}
+
     
   }
 
