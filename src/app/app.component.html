@@ -1,2 +1,20 @@
 <app-header></app-header>
-<app-home></app-home>
+<div>
+    <app-globalbuttons></app-globalbuttons>
+</div>
+<div>
+    aggiungi nota
+</div>
+<app-input></app-input>
+<div>
+    le tue note
+</div>
+<div *ngIf="notebase.length <= 0">
+    <h3>
+        Nessuna nota presente
+    </h3>
+</div>
+
+<div *ngIf="notebase.length >= 1">
+    <app-note></app-note>
+</div>
