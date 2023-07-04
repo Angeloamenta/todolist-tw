@@ -30,14 +30,19 @@ export class NoteComponent {
   }
 
   editFormNote(index:any) {
+    
     console.log(this.editForm.value, index);
     let element = this.notes.notes[index];
-    if (element.name === "" || element.text === "") {
+    if (this.editForm.value.name === null || 
+      this.editForm.value.text === null ||
+      this.editForm.value.name === "" ||
+      this.editForm.value.text === "") {
       console.log("no");
       element.empty = true
       element.exist = false
-      this.notes.notes[index].name = this.name
-      this.notes.notes[index].text = this.text
+      this.editForm.reset();
+      // this.notes.notes[index].name = this.name
+      // this.notes.notes[index].text = this.text
     }else {
       let existingItem = this.notes.notes.find(item => item.text === this.editForm.value.text);
     if (existingItem) {
@@ -58,9 +63,6 @@ export class NoteComponent {
 
   }
 }
-  this.editForm.value.name = ""
-  this.editForm.value.text = ""
-  console.log(this.editForm.value, index);
   this.editForm.reset();
 }
 
