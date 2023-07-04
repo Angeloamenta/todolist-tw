@@ -61,7 +61,7 @@ export class NoteComponent {
   this.editForm.value.name = ""
   this.editForm.value.text = ""
   console.log(this.editForm.value, index);
-  this.editForm.resetForm();
+  this.editForm.reset();
 }
 
  checkNote(index:any) {
