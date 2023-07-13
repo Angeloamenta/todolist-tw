@@ -1,3 +1,22 @@
+<div class="containerfluid single-note mt-2" *ngFor="let note of notebase; let indexOfelement=index;">
+    <div class="row bg-secondary">
+        <div class="col-10 note-title d-flex align-items-center bg-secondary">
+            <input class="m-0" (change)="checkNote(indexOfelement)" [checked]="note.checked" type="checkbox" name="" id="">
+            <h3 class="my-0 mx-2">{{note.name}}</h3>
+        </div>
+        <div class="col-2">
+            <button class="edit-note" (click)="editNote(indexOfelement)"><i class="fa-solid fa-pen-to-square"></i></button>
+            <button class="delete-note" (click)="delete(indexOfelement)"><i class="fa-solid fa-eraser"></i></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p>{{note.text}}</p>
+        </div>
+    </div>
+</div>
+
+
 <div style="background-color: antiquewhite;" *ngFor="let note of notebase; let indexOfelement=index;">
     <input (change)="checkNote(indexOfelement)" [checked]="note.checked" type="checkbox" name="" id="">
     <h3>{{note.name}}</h3>
@@ -5,16 +24,8 @@
     <div>
         <button (click)="editNote(indexOfelement)">edit</button>
         <button (click)="delete(indexOfelement)">cancella</button>
-        <!-- <button (click)="selectAll()">tutto</button> -->
     </div>
     <div *ngIf="note.edit">
-        <!-- <div>
-            <input type="text" value="{{note.name}}">
-        </div>
-        <div>
-            <textarea name="" id="" cols="30" rows="10" value="{{note.text}}"></textarea>
-        </div>
-        <button (click)="editSingleNote(indexOfelement)">modifica nota</button> -->
         <form [formGroup]="editForm" (ngSubmit)="editFormNote(indexOfelement)">
             <input type="text" name="name" formControlName="name">
             <textarea name="" id="" cols="30" rows="10" formControlName="text"></textarea>
@@ -28,3 +39,21 @@
         nota esistente
     </div>
 </div>
+
+
+
+<!-- <div class="containerfluid">
+    <div class="row single-note" *ngFor="let note of notebase; let indexOfelement=index;">
+        <div class="col-12 note-title d-flex align-items-center bg-secondary">
+            <input class="m-0" (change)="checkNote(indexOfelement)" [checked]="note.checked" type="checkbox" name="" id="">
+            <h3 class="my-0 mx-2">{{note.name}}</h3>
+        </div>
+        <div class="col-12">
+            <p>{{note.text}}</p>
+        </div>
+        <div class="col-12">
+            <button class="edit-note" (click)="editNote(indexOfelement)"><i class="fa-solid fa-pen-to-square"></i></button>
+            <button class="delete-note" (click)="delete(indexOfelement)"><i class="fa-solid fa-eraser"></i></button>
+        </div>
+    </div>
+</div> -->

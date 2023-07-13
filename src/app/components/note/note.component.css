@@ -1,0 +1,31 @@
+
+.note-title {
+    height: 50px;
+}
+
+.single-note {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.edit-note,
+.delete-note {
+    border-radius: 5px;
+    padding: 4px 10px;
+    border: none;
+    text-transform: capitalize;
+}
+
+.edit-note {
+    background-color:cornflowerblue
+}
+
+
+.delete-note {
+    background-color: orange
+}
+
+.edit-note:hover,
+.delete-note:hover {
+    background-color: transparent;
+    border: 0.1px solid black;
+}

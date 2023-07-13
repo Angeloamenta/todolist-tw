@@ -1,0 +1,9 @@
+
+.header {
+    display: block;
+    height: 80px;
+}
+
+.content-app {
+    height: calc(100vh - 80px);
+}
