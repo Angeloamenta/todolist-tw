@@ -1,29 +1,40 @@
 <app-header class="header"></app-header>
-
 <div class="content-app container">
     <div class="row inner-content-app">
         <!-- section sx -->
-        <div class="col-6">
-            <div>
-                <app-globalbuttons></app-globalbuttons>
-            </div>
-            <div>
-                aggiungi nota
-            </div>
-            <app-input></app-input>
-        </div>
-
-        <!-- section dx -->
-        <div class="col-6 section-dx">
-            <div class="container container-dx">
+        <div class="col-12 col-md-6 section-sx">
+            <div class="container">
                 <div class="row mb-3">
-                    <div class="col bg-warning text-center my-note">
-                        <h2>Le tue Note</h2>
+                    <div class="col bg-warning d-flex justify-content-center align-items-center my-note">
+                        <h2 class="p-0 m-0">
+                            Aggiungi nota
+                        </h2>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col" *ngIf="notebase.length <= 0">
-                        <h3>
+                    <div class="col">
+                        <app-input></app-input>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- section dx -->
+        <div class="col-12 col-md-6 section-dx">
+            <div class="container container-dx">
+                <div class="row mb-3">
+                    <div class="col bg-warning d-flex justify-content-center align-items-center my-note ">
+                        <h2 class="m-0 p-0">Le tue Note</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col global-button-container d-flex justify-content-center align-items-center">
+                        <app-globalbuttons></app-globalbuttons>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center align-items-center pt-3" *ngIf="notebase.length <= 0">
+                        <h3 class="m-0 p-0">
                             Nessuna nota presente
                         </h3>
                     </div>

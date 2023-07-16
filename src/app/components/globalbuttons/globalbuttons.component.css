@@ -1,0 +1,8 @@
+
+.select-all,
+.deselect-all,
+.delete-all {
+    border-radius: 5px;
+    padding: 10px 10px;
+    border: none;
+}

@@ -1,5 +1,12 @@
-<div>
-    <button [disabled]="notebase.length <= 0" (click)="selectAll()">seleziona tutto</button>
-    <button [disabled]="!isDisabled()" (click)="deselectAll()">deseleziona tutto</button>
-    <button [disabled]="!isDisabled()" (click)="deleteSelected()">elimina selezionati</button>
+
+<div class="container">
+    <div class="row">
+        <div class="col d-flex justify-content-center align-items-center">
+            <button class="select-all" [disabled]="notebase.length <= 0" (click)="selectAll()"><i class="fa-solid fa-list-check"></i> Seleziona tutto</button>
+
+            <button class="deselect-all mx-4" [disabled]="!isDisabled()" (click)="deselectAll()"><i class="fa-solid fa-list-ul"></i> Deseleziona tutto</button>
+            
+            <button class="delete-all" [disabled]="!isDisabled()" (click)="deleteSelected()"><i class="fa-regular fa-trash-can"></i> Elimina tutto</button>
+        </div>
+    </div>
 </div>

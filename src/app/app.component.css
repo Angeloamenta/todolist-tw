@@ -17,15 +17,23 @@
     height: 100%;
 }
 
+.section-sx {
+    border-right: 1px solid lightgray;
+}
+
 .my-note {
     height: 50px;
 }
 
 .my-note-container {
-    height: calc(100% - 50px);
+    height: calc(100% - 100px);
 }
 
 .my-inner-note-container {
     height: 100%;
     overflow-y: auto;
+}
+
+.global-button-container {
+    height: 50px;
 }
