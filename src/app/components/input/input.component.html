@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <input [(ngModel)]="name" type="text">
     <textarea [(ngModel)]="text" name="" id="" cols="30" rows="10"></textarea>
     <input (click)="addNote()" type="button" value="Aggiungi Nota">
@@ -9,5 +9,24 @@
 
 <div *ngIf="exist">
     la nota esiste
+</div> -->
+<div class="container">
+    <div class="row">
+        <label for="title">Nota</label>
+        <input class="name-note" [(ngModel)]="name" name="title" type="text">
+        <label for="testo">Testo</label>
+        <textarea class="text-note" [(ngModel)]="text" name="testo" id="" cols="30" rows="10"></textarea>
+        <button class="add-note" (click)="addNote()"><i class="fa-solid fa-plus"></i> Aggiungi nota</button>
+    </div>
+    <div *ngIf="error" class="row">
+        <div class="col">
+            <p>Riempi i campi richiesti</p>
+        </div>
+    </div>
+    <div *ngIf="exist" class="row">
+        <div class="col">
+            <p>La nota esiste</p>
+        </div>
+    </div>
 </div>
 
