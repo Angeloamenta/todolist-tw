@@ -1,23 +1,44 @@
-<div class="containerfluid single-note mt-2" *ngFor="let note of notebase; let indexOfelement=index;">
+<div class="note-container containerfluid mt-2" *ngFor="let note of notebase; let indexOfelement=index;">
     <div class="row bg-secondary">
         <div class="col-10 note-title d-flex align-items-center bg-secondary">
             <input class="m-0" (change)="checkNote(indexOfelement)" [checked]="note.checked" type="checkbox" name="" id="">
             <h3 class="my-0 mx-2">{{note.name}}</h3>
         </div>
-        <div class="col-2">
+        <div class="col-2 d-flex align-items-center justify-content-around">
             <button class="edit-note" (click)="editNote(indexOfelement)"><i class="fa-solid fa-pen-to-square"></i></button>
             <button class="delete-note" (click)="delete(indexOfelement)"><i class="fa-solid fa-eraser"></i></button>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12">
+    <div class="row pt-2 box-note">
+        <div class="col-12 ">
             <p>{{note.text}}</p>
+        </div>
+    </div>
+
+    <!-- edit -->
+    <div class="row" *ngIf="note.edit">
+        <div class="col">
+            <form [formGroup]="editForm" (ngSubmit)="editFormNote(indexOfelement)">
+                <input type="text" name="name" formControlName="name">
+                <textarea name="" id="" cols="30" rows="10" formControlName="text"></textarea>
+                <input type="submit" value="invio">
+            </form>
+        </div>
+    </div>
+    <div class="row" *ngIf="note.empty">
+        <div class="col">
+            <p>Nota non valida</p>
+        </div>
+    </div>
+    <div class="row" *ngIf="note.exist">
+        <div class="col">
+            <p>Nota esistente</p>
         </div>
     </div>
 </div>
 
 
-<div style="background-color: antiquewhite;" *ngFor="let note of notebase; let indexOfelement=index;">
+<!-- <div style="background-color: antiquewhite;" *ngFor="let note of notebase; let indexOfelement=index;">
     <input (change)="checkNote(indexOfelement)" [checked]="note.checked" type="checkbox" name="" id="">
     <h3>{{note.name}}</h3>
     <p>{{note.text}}</p>
@@ -38,7 +59,7 @@
     <div *ngIf="note.exist">
         nota esistente
     </div>
-</div>
+</div> -->
 
 
 
