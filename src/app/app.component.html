@@ -1,7 +1,7 @@
 <app-header class="header"></app-header>
 
 <div class="content-app container">
-    <div class="row">
+    <div class="row inner-content-app">
         <!-- section sx -->
         <div class="col-6">
             <div>
@@ -15,9 +15,9 @@
 
         <!-- section dx -->
         <div class="col-6 section-dx">
-            <div class="container">
+            <div class="container container-dx">
                 <div class="row mb-3">
-                    <div class="col bg-warning text-center">
+                    <div class="col bg-warning text-center my-note">
                         <h2>Le tue Note</h2>
                     </div>
                 </div>
@@ -28,8 +28,8 @@
                         </h3>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col" *ngIf="notebase.length >= 1">
+                <div class="row my-note-container">
+                    <div class="col my-inner-note-container" *ngIf="notebase.length >= 1">
                         <app-note></app-note>
                     </div>
                 </div>

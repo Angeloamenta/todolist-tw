@@ -7,3 +7,25 @@
 .content-app {
     height: calc(100vh - 80px);
 }
+
+.inner-content-app {
+    height: 90%;
+}
+
+.section-dx,
+.container-dx {
+    height: 100%;
+}
+
+.my-note {
+    height: 50px;
+}
+
+.my-note-container {
+    height: calc(100% - 50px);
+}
+
+.my-inner-note-container {
+    height: 100%;
+    overflow-y: auto;
+}
