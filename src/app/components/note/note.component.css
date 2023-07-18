@@ -16,3 +16,14 @@
     padding: 4px 10px;
     border: none;
 }
+
+
+.edit-note-container {
+    background-color: yellow;
+}
+
+.button {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 2px;
+}

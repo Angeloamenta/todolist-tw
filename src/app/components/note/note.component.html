@@ -1,10 +1,10 @@
 <div class="note-container containerfluid mt-2" *ngFor="let note of notebase; let indexOfelement=index;">
     <div class="row bg-secondary">
-        <div class="col-10 note-title d-flex align-items-center bg-secondary">
+        <div class="col-9 note-title d-flex align-items-center bg-secondary">
             <input class="m-0" (change)="checkNote(indexOfelement)" [checked]="note.checked" type="checkbox" name="" id="">
             <h3 class="my-0 mx-2">{{note.name}}</h3>
         </div>
-        <div class="col-2 d-flex align-items-center justify-content-around">
+        <div class="col-3 d-flex align-items-center justify-content-around">
             <button class="edit-note" (click)="editNote(indexOfelement)"><i class="fa-solid fa-pen-to-square"></i></button>
             <button class="delete-note" (click)="delete(indexOfelement)"><i class="fa-solid fa-eraser"></i></button>
         </div>
@@ -16,12 +16,15 @@
     </div>
 
     <!-- edit -->
-    <div class="row" *ngIf="note.edit">
-        <div class="col">
-            <form [formGroup]="editForm" (ngSubmit)="editFormNote(indexOfelement)">
-                <input type="text" name="name" formControlName="name">
-                <textarea name="" id="" cols="30" rows="10" formControlName="text"></textarea>
-                <input type="submit" value="invio">
+    <div class="row edit-note-container p-2" *ngIf="note.edit">
+        <div class="col edit-note-subcontainer">
+            <form class="form-edit-note d-flex flex-column" [formGroup]="editForm" (ngSubmit)="editFormNote(indexOfelement)">
+                <label for="name">Nota</label>
+                <input class="w-50" type="text" name="name" formControlName="name">
+                <label for="text">Testo</label>
+                <textarea class="w-75" name="text" id="" cols="30" rows="10" formControlName="text"></textarea>
+                <input class="button w-25 my-3" type="submit" value="invio">
+                <button class="button w-25" (click)="resetEdit(indexOfelement)">Annulla</button>
             </form>
         </div>
     </div>

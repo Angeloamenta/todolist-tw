@@ -75,6 +75,8 @@ export class NoteComponent {
  }
 
 
+
+
     delete(index:any) {
       console.log(index);
      this.notes.notes.splice(index, 1)
@@ -93,6 +95,14 @@ export class NoteComponent {
       console.log("editnote", this.name, this.text);
 
       return editNotes.edit = !editNotes.edit
+    }
+
+    resetEdit(index:any) {
+      let editNotes = this.notes.notes[index]
+      return editNotes.edit = !editNotes.edit
+      this.editForm.reset();
+
+
     }
 
     // noteOk(index:any) {
