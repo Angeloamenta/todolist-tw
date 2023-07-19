@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NotesService } from '../../service/notes.service';
+import { Note } from 'src/app/model/note';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class InputComponent {
 
 addNote() {
   let obj:any = {name: this.name, text:this.text, checked: false, empty:false ,exist:false}
-  if (obj.name == false || obj.text == false) {
+  if (obj.name === false || obj.text === false) {
     this.error= true
     this.exist= false
 

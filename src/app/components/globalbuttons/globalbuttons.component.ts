@@ -1,5 +1,6 @@
 import { Component, numberAttribute, OnInit } from '@angular/core';
 import { NotesService } from '../../service/notes.service';
+import { Note } from 'src/app/model/note';
 
 
 @Component({
@@ -50,9 +51,9 @@ export class GlobalbuttonsComponent {
   }
 
    isDisabled() {
-    let even = (element:any) => element.checked == true;
+    let even = (element:any) => element.checked === true;
     console.log("sss",this.notes.notes.some(even));
-    if(this.notes.notes.some(even) == true){
+    if(this.notes.notes.some(even) === true){
 
       return true
     } else {
