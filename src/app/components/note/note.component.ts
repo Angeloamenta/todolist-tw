@@ -99,7 +99,10 @@ export class NoteComponent {
 
     resetEdit(index:any) {
       let editNotes = this.notes.notes[index]
+      editNotes.exist = false
+      editNotes.empty= false
       return editNotes.edit = !editNotes.edit
+      
       this.editForm.reset();
 
 
