@@ -18,6 +18,10 @@ export class InputComponent {
   exist:boolean = false;
 
 addNote() {
+
+  this.error= false
+  this.exist= false
+  
   for (let index = 0; index < this.notes.notes.length; index++) {
     const element = this.notes.notes[index];
 
