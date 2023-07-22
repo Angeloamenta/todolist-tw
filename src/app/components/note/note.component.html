@@ -14,20 +14,6 @@
             <p>{{note.text}}</p>
         </div>
     </div>
-
-    <!-- edit -->
-    <div class="row edit-note-container p-2" *ngIf="note.edit">
-        <div class="col edit-note-subcontainer">
-            <form class="form-edit-note d-flex flex-column" [formGroup]="editForm" (ngSubmit)="editFormNote(indexOfelement)">
-                <label for="name">Nota</label>
-                <input class="edit-note-input w-50" type="text" name="name" formControlName="name">
-                <label for="text">Testo</label>
-                <textarea class="edit-note-input w-75" name="text" id="" cols="30" rows="10" formControlName="text"></textarea>
-                <input class="button w-25 my-3" type="submit" value="invio">
-                <button class="button w-25" (click)="resetEdit(indexOfelement)">Annulla</button>
-            </form>
-        </div>
-    </div>
     <div class="row" *ngIf="note.empty">
         <div class="col p-0">
             <p class="bg-dark text-warning p-1 w-50 text-center mt-2">Nota non valida <i class="fa-solid fa-triangle-exclamation"></i></p>
@@ -36,6 +22,20 @@
     <div class="row" *ngIf="note.exist">
         <div class="col p-0">
             <p class="bg-dark text-warning p-1 w-50 text-center mt-2">Nota esistente <i class="fa-solid fa-triangle-exclamation"></i></p>
+        </div>
+    </div>
+
+    <!-- edit -->
+    <div class="row edit-note-container p-2" *ngIf="note.edit">
+        <div class="col edit-note-subcontainer">
+            <form class="form-edit-note d-flex flex-column" [formGroup]="editForm" (ngSubmit)="editFormNote(indexOfelement)">
+                <label for="name">Nota</label>
+                <input class="edit-note-input w-50 p-3" type="text" name="name" formControlName="name">
+                <label for="text">Testo</label>
+                <textarea class="edit-note-input w-75 p-3" name="text" id="" cols="30" rows="10" formControlName="text"></textarea>
+                <input class="button w-25 my-3" type="submit" value="invio">
+                <button class="button w-25" (click)="resetEdit(indexOfelement)">Annulla</button>
+            </form>
         </div>
     </div>
 </div>

@@ -18,6 +18,7 @@ export class NoteComponent {
 
    editForm:any = FormGroup
 
+  
 
 
   ngOnInit() {
@@ -30,7 +31,6 @@ export class NoteComponent {
   }
 
   editFormNote(index:any) {
-    
     console.log(this.editForm.value, index);
     let element = this.notes.notes[index];
     if (this.editForm.value.name === null || 
@@ -46,6 +46,7 @@ export class NoteComponent {
     }else {
       let existingItem = this.notes.notes.find(item => item.text === this.editForm.value.text);
     if (existingItem) {
+      element.edit = false
       // this.notes.notes[index].name = this.name
       // this.notes.notes[index].text = this.text
       element.exist = true
@@ -88,12 +89,16 @@ export class NoteComponent {
     }
 
     editNote (index:any) {
+
       console.log(index);
       let editNotes = this.notes.notes[index]
+      editNotes.exist = false
+      editNotes.empty = false
       this.name = editNotes.name
       this.text = editNotes.text
       console.log("editnote", this.name, this.text);
-
+      this.editForm.setValue({name: this.name, text: this.text})
+      
       return editNotes.edit = !editNotes.edit
     }
 
@@ -113,10 +118,11 @@ export class NoteComponent {
     // }
 
     editSingleNote(index:any) {
-      console.log(this.notes.notes[index]);
       let element = this.notes.notes[index];
-      console.log(element.text);
-
+      // console.log(element.text);
+      // console.log("testo", this.editForm.text);
+      this.name = element.name
+      this.text = element.text
 
       if (element.name === "" || element.text === "") {
         console.log("no");
@@ -132,6 +138,7 @@ export class NoteComponent {
       if (existingItem) {
         this.notes.notes[index].name = this.name
         this.notes.notes[index].text = this.text
+        this.editForm.setValue({name: this.name, text: this.text})
         element.exist = true
         element.empty= false
 

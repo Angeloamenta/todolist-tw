@@ -18,6 +18,14 @@ export class InputComponent {
   exist:boolean = false;
 
 addNote() {
+  for (let index = 0; index < this.notes.notes.length; index++) {
+    const element = this.notes.notes[index];
+
+    element.edit = false
+    element.empty = false
+    element.exist = false
+    
+  }
   let obj:any = {name: this.name, text:this.text, checked: false, empty:false ,exist:false}
   if (obj.name == false || obj.text == false) {
     this.error= true
