@@ -44,7 +44,7 @@ export class NoteComponent {
       // this.notes.notes[index].name = this.name
       // this.notes.notes[index].text = this.text
     }else {
-      let existingItem = this.notes.notes.find(item => item.text === this.editForm.value.text);
+      let existingItem = this.notes.notes.find(item => item.text.toLowerCase() === this.editForm.value.text.toLowerCase());
     if (existingItem) {
       element.edit = false
       // this.notes.notes[index].name = this.name
@@ -134,7 +134,7 @@ export class NoteComponent {
         let text = this.notes.notes[index].text
         console.log(text);
 
-        let existingItem = this.notes.notes.find(item => item.text === text);
+        let existingItem = this.notes.notes.find(item => item.text.toLowerCase() === text.toLowerCase());
       if (existingItem) {
         this.notes.notes[index].name = this.name
         this.notes.notes[index].text = this.text

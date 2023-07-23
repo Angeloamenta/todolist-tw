@@ -22,9 +22,9 @@ export class GlobalbuttonsComponent {
   selectAll() {
     for (let index = 0; index < this.notes.notes.length; index++) {
       const element = this.notes.notes[index];
-      console.log(element);
+      // console.log(element);
       element.checked = true
-      console.log(element);
+      // console.log(element);
 
       
     }
@@ -33,7 +33,7 @@ export class GlobalbuttonsComponent {
   deselectAll() {
     for (let index = 0; index < this.notes.notes.length; index++) {
       const element = this.notes.notes[index];
-      console.log(element);
+      // console.log(element);
       element.checked = false;
       
       
@@ -51,9 +51,9 @@ export class GlobalbuttonsComponent {
   }
 
    isDisabled() {
-    let even = (element:any) => element.checked === true;
-    console.log("sss",this.notes.notes.some(even));
-    if(this.notes.notes.some(even) === true){
+    let disabled = (element:any) => element.checked === true;
+    // console.log("sss",this.notes.notes.some(even));
+    if(this.notes.notes.some(disabled) === true){
 
       return true
     } else {

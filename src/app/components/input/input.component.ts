@@ -39,7 +39,7 @@ addNote() {
     if (this.notes.notes.length <=0) {
       this.notes.notes.push(obj)
     }else {
-      let existingItem = this.notes.notes.find(item => item.text === obj.text);
+      let existingItem = this.notes.notes.find(item => item.text.toLowerCase() === obj.text.toLowerCase());
       if (existingItem) {
       this.exist = true
       this.error= false
