@@ -16,17 +16,17 @@
         <input class="name-note" [(ngModel)]="name" name="title" type="text">
         <label for="testo">Testo</label>
         <textarea class="text-note" [(ngModel)]="text" name="testo" id="" cols="30" rows="10"></textarea>
+        <div *ngIf="error" class="row">
+            <div class="col p-0">
+                <p class="bg-dark text-warning p-1 w-50 text-center mt-2">Riempi i campi richiesti <i class="fa-solid fa-triangle-exclamation"></i></p>
+            </div>
+        </div>
+        <div *ngIf="exist" class="row">
+            <div class="col p-0">
+                <p class="bg-dark text-warning p-1 w-50 text-center mt-2">La nota esiste <i class="fa-solid fa-triangle-exclamation"></i></p>
+            </div>
+        </div>
         <button class="add-note" (click)="addNote()"><i class="fa-solid fa-plus"></i> Aggiungi nota</button>
-    </div>
-    <div *ngIf="error" class="row">
-        <div class="col p-0">
-            <p class="bg-dark text-warning p-1 w-50 text-center mt-2">Riempi i campi richiesti <i class="fa-solid fa-triangle-exclamation"></i></p>
-        </div>
-    </div>
-    <div *ngIf="exist" class="row">
-        <div class="col p-0">
-            <p class="bg-dark text-warning p-1 w-50 text-center mt-2">La nota esiste <i class="fa-solid fa-triangle-exclamation"></i></p>
-        </div>
     </div>
 </div>
 
