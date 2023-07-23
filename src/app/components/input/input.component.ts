@@ -17,6 +17,15 @@ export class InputComponent {
   error:boolean = false
   exist:boolean = false;
 
+  pressEnter(event:any) {
+    if (event.key === "Enter") {
+      // console.log("enter");
+      
+      this.addNote()
+    }
+  }
+  
+
 addNote() {
 
   this.error= false
